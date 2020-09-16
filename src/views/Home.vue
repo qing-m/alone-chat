@@ -1,5 +1,5 @@
 <template>
-  <div class="home" v-bing:title="WelcomeMessage" @click="handleClickChangeMsg">
+  <div class="home" v-bind:title="WelcomeMessage" @click="handleClickChangeMsg">
     {{ WelcomeMessage }}
   </div>
 </template>
