@@ -27,6 +27,21 @@ export default {
 };
 </script>
 <style lang="scss">
+#app {
+  font-family: "微软雅黑";
+  font-size: 16px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #ffffff;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #cccccc;
+  }
+}
 .text-popup {
   animation: textPopup 1s;
   user-select: none;
