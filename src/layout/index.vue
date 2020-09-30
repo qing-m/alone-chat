@@ -1,13 +1,17 @@
 <template>
   <div class="lay-out-wrapper">
-    <div>111111111111111111111111</div>
+    <navBar />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import navBar from "./navBar";
 export default {
-  name: "Baner"
+  name: "Layout",
+  components: {
+    navBar
+  }
 };
 </script>
 
