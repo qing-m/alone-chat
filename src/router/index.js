@@ -1,20 +1,31 @@
 import Vue from "vue";
-import VueRouter from "vue-router";
+import Router from "vue-router";
 
-Vue.use(VueRouter);
+Vue.use(Router);
 
-const routes = [
+import home from "./modules/home";
+
+export const constantRoutes = [
   {
     path: "/",
-    name: "Home",
-    component: () => import("@/views/Home")
-  }
+    redirect: "/home/index"
+  },
+  home
 ];
+export const asyncRoutes = [home];
 
-const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
-  routes
-});
+const createRouter = () =>
+  new Router({
+    mode: "history", // require service support
+    scrollBehavior: () => ({ y: 0 }),
+    routes: constantRoutes
+  });
+
+const router = createRouter();
+
+export function resetRouter() {
+  const newRouter = createRouter();
+  router.matcher = newRouter.matcher; // reset router
+}
 
 export default router;

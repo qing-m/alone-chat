@@ -1,64 +1,12 @@
 <template>
-  <div id="app" @click="handleClickSocialistValues">
-    <vue-canvas-nest :config="config"></vue-canvas-nest>
+  <div id="app">
     <router-view />
   </div>
 </template>
 
 <script>
-import { socialistValues } from "@/utils";
-import vueCanvasNest from "vue-canvas-nest";
 export default {
-  name: "app",
-  components: { vueCanvasNest },
-  data() {
-    return {
-      config: {
-        color: "skyblue",
-        opacity: 1
-      }
-    };
-  },
-  methods: {
-    handleClickSocialistValues(e) {
-      socialistValues(e);
-    }
-  }
+  name: "app"
 };
 </script>
-<style lang="scss">
-#app {
-  font-family: "微软雅黑";
-  font-size: 16px;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  &::-webkit-scrollbar {
-    width: 10px;
-  }
-  &::-webkit-scrollbar-track {
-    background-color: #ffffff;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: #cccccc;
-  }
-}
-.text-popup {
-  animation: textPopup 1s;
-  user-select: none;
-  white-space: nowrap;
-  position: absolute;
-  z-index: 99;
-}
-@keyframes textPopup {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  5% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-50px);
-  }
-}
-</style>
+<style lang="scss"></style>

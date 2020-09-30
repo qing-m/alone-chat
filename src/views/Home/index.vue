@@ -1,16 +1,12 @@
 <template>
   <div class="home-wrapper">
-    <baner />
+    11111111111111111111
   </div>
 </template>
 
 <script>
-import baner from "@/components/baner";
 export default {
-  name: "Home",
-  components: {
-    baner
-  }
+  name: "Home"
 };
 </script>
 
