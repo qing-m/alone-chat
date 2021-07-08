@@ -1,5 +1,9 @@
 <template>
-  <Tutorial/>
+  <div>
+    <!-- <Tutorial/> -->
+    1111111111
+    <nuxt-child name='top'/>
+  </div>
 </template>
 
 <script>

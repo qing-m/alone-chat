@@ -7,7 +7,7 @@ export default {
     },
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
@@ -32,7 +32,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
+    // '@nuxtjs/eslint-module',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -41,5 +41,22 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  router: {
+    extendRoutes(routes, resolve) {
+      const index = routes.findIndex(route => route.name === 'index')
+      routes[index] = {
+        ...routes[index],
+        components: {
+          default: routes[index].component,
+          top: resolve(__dirname, 'components/Tutorial.vue')
+        },
+        chunkNames: {
+          top: 'components/Tutorial'
+        }
+      }
+      console.log(routes[index])
+    }
   }
 }
