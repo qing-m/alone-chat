@@ -1,3 +1,7 @@
 # alone-chat
-Welcome to [Home](http://alone.chat)! This is my project.
-你好，欢迎访问本网站源码。此项目使用了Nuxt.js
+Welcome to [Home](http://alone.chat)!  
+本站点是基于Nuxt.js服务端渲染的应用框架  
+启动项目  
+yarn install  
+yarn dev
+
