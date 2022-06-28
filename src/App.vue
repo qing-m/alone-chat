@@ -3,6 +3,7 @@ import { RouterView } from "vue-router";
 </script>
 
 <template>
+  Hello Vue3
   <RouterView />
 </template>
 
